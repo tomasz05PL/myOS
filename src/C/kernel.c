@@ -44,7 +44,7 @@ size_t strlen(const char* str) {
 void reverse(char* str) {
     int i, j;
     char c;
-    for(int i = 0, j = strlen(str) - 1; i < j; ++i, --j) {
+    for(i = 0, j = strlen(str) - 1; i < j; ++i, --j) {
         c = str[i];
         str[i] = str[j];
         str[j] = c;
@@ -61,7 +61,7 @@ void itoa(int value, char* buffer, int base) {
     }
 
     if(value < 0 && base == 10) {
-        isNegative == true;
+        isNegative = true;
         value = -value;
     }
 
@@ -129,7 +129,7 @@ void terminal_writestring(const char* str) {
 void kmain(void) {
     terminal_initialize();
     char buf[20];
-    itoa(32, buf, 2);
+    itoa(-32, buf, 10);
     terminal_writestring(buf);
     terminal_writestring("\nHello\n");
 }
